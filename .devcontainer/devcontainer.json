@@ -1,0 +1,51 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "rc ui kit",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"runArgs": [
+		"--name=rc_ui_kit",
+	  "--rm"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"runem.lit-plugin",
+				"dbaeumer.vscode-eslint",
+				"waderyan.gitblame"
+			],
+			"settings": {
+				"workbench.editor.tabCloseButton": "left",
+				"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": "always"
+				},
+				"eslint.validate": [
+					"javascript", 
+					"typescriptreact", 
+					"typescript", 
+					"react"
+			  ],
+  			"editor.tabSize": 2,
+ 				"editor.insertSpaces": false,
+				"editor.formatOnSave": true,
+				"workbench.colorCustomizations": {
+					"titleBar.activeBackground": "#0F1B12",
+					"titleBar.border": "#0A130D",
+					"titleBar.activeForeground": "#69FF5C",
+					"titleBar.inactiveBackground": "#0F1B12",
+					"titleBar.inactiveForeground": "#3BBF47",
+					"activityBar.background": "#0F1B12",
+					"activityBar.foreground": "#69FF5C",
+					"activityBar.inactiveForeground": "#3BBF47",
+					"activityBar.activeBorder": "#69FF5C",
+					"tab.activeBorderTop": "#69FF5C",
+					"tab.activeBackground": "#121212",
+					"tab.inactiveBackground": "#1B1B1B",
+					"tab.activeForeground": "#69FF5C",
+					"tab.inactiveForeground": "#4F4F4F"
+				}
+			}
+		}
+	}
+}
