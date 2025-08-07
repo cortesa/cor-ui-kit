@@ -8,18 +8,6 @@
 	text-align: right;
 }
 
-.font-size-tinier {
-	font-size: var(--font-size-tinier);
-}
-.font-size-smaller {
-	font-size: var(--font-size-smaller);
-}
-.font-size-bigger {
-	font-size: var(--font-size-bigger);
-}
-.font-size-larger {
-	font-size: var(--font-size-larger);
-}
 .font-size-xxs {
 	font-size: var(--font-size-xxs);
 }

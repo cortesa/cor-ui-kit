@@ -19,10 +19,6 @@ const text = cva("", {
 			48: styles["padding-48"],
 		},
 		fontSize: {
-			tinier: styles["font-size-tinier"],
-			smaller: styles["font-size-smaller"],
-			bigger: styles["font-size-bigger"],
-			larger: styles["font-size-larger"],
 			xxs: styles["font-size-xxs"],
 			xs: styles["font-size-xs"],
 			s: styles["font-size-s"],
@@ -39,9 +35,15 @@ const text = cva("", {
 			right: styles["text-align-right"]
 		},
 		fontWeight: {
+			100: styles["font-weight-100"],
+			400: styles["font-weight-400"],
+			700: styles["font-weight-700"],
+			900: styles["font-weight-900"],
+			lighter: styles["font-weight-lighter"],
+			light: styles["font-weight-light"],
 			normal: styles["font-weight-normal"],
 			bold: styles["font-weight-bold"],
-			light: styles["font-weight-light"]
+			bolder: styles["font-weight-bolder"],
 		},
 		whiteSpace: {
 			normal: styles["white-space-normal"],
@@ -75,8 +77,10 @@ const text = cva("", {
 	}
 })
 
-export type TextProps = JSX.IntrinsicElements["div"] &
-	VariantProps<typeof text> & {
+export type TextProps = JSX.IntrinsicElements["div"] 
+	&	Omit<VariantProps<typeof text>, "padding"> 
+	& {
+		padding?: VariantProps<typeof text>["padding"] | string
 		width?: string 
 		height?: string
 		color?: string
@@ -109,11 +113,12 @@ export const Text = forwardRef<HTMLDivElement, TextProps>(({
 	className,
 	style,
 	...props
-}: TextProps) => {
+}, ref) => {
 	return (
 		<div
+			ref={ref}
 			className={text({
-				padding: typeof padding === "number" ? padding : undefined,
+				padding: typeof padding === "string" ? undefined : padding,
 				fontSize,
 				textAlign,
 				fontWeight,
@@ -129,7 +134,7 @@ export const Text = forwardRef<HTMLDivElement, TextProps>(({
 			style={{
 				width,
 				height,
-				padding: typeof padding === "number" ? undefined : (padding ?? undefined),
+				padding: typeof padding === "string" ? padding : undefined,
 				letterSpacing,
 				lineHeight,
 				flexGrow,

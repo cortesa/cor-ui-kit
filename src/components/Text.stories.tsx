@@ -1,5 +1,4 @@
-// Replace your-framework with the framework you are using, e.g. react-vite, nextjs, nextjs-vite, etc.
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Text } from '@/components/Text';
 
 const meta = {
@@ -25,7 +24,7 @@ const meta = {
     },
     padding: {
       control: { type: 'select' },
-      options: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48],
+      options: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, "20px", "1rem"],
       description: 'Also can use custom values like "20px" or "1rem"',
     },
     fontSize: {
@@ -41,7 +40,7 @@ const meta = {
     },
     fontWeight: {
       control: { type: 'select' },
-      options: ['normal', 'bold', 'light'],
+      options: [100, 400, 700, 900, 'lighter', 'light', 'normal', 'bold', 'bolder']
     },
     whiteSpace: {
       control: { type: 'select' },

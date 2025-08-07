@@ -1,24 +1,75 @@
-import { type JSX } from "react"
-import clsx from "clsx"
-
-import type { Alignment } from "@/types"
+import { forwardRef, type JSX } from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { Text, type TextProps } from "./Text"
 import styles from "./Flex.module.css"
 
-export type FlexProps = JSX.IntrinsicElements[ "div" ]
-	& TextProps
-	& {
-		direction?: "row" | "row-reverse" | "column" | "column-reverse",
-		column?: boolean,
-		justify?: Alignment,
-		align?: Alignment,
-		wrap?: boolean,
-		gap?: 4 | 8 | 12 | 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 | 48
+const flex = cva(styles.flex, {
+	variants: {
+		direction: {
+			row: styles.row,
+			"row-reverse": styles["row-reverse"],
+			column: styles.column,
+			"column-reverse": styles["column-reverse"],
+		},
+		justify: {
+			center: styles["justify-center"],
+			stretch: styles["justify-stretch"],
+			start: styles["justify-start"],
+			end: styles["justify-end"],
+			between: styles["justify-between"],
+			around: styles["justify-around"],
+			evenly: styles["justify-evenly"],
+		},
+		align: {
+			start: styles["align-start"],
+			end: styles["align-end"],
+			center: styles["align-center"],
+			stretch: styles["align-stretch"],
+		},
+		wrap: {
+			true: styles.wrap,
+			false: styles.nowrap,
+		},
+		gap: {
+			4: styles.gap4,
+			8: styles.gap8,
+			12: styles.gap12,
+			16: styles.gap16,
+			20: styles.gap20,
+			24: styles.gap24,
+			28: styles.gap28,
+			32: styles.gap32,
+			36: styles.gap36,
+			40: styles.gap40,
+			44: styles.gap44,
+			48: styles.gap48,
+		},
+		truncate: {
+			s: styles.truncateS,
+			m: styles.truncateM,
+			l: styles.truncateL,
+		},
+		centered: {
+			true: styles.centered,
+			false: "",
+		}
+	},
+	defaultVariants: {
+		direction: "row",
+		align: "start",
 	}
-export function Flex({
+})
+
+export type FlexProps = JSX.IntrinsicElements[ "div" ]
+	& TextProps 
+	& Omit<VariantProps<typeof flex>, "gap">
+	& {
+		gap?: VariantProps<typeof flex>["gap"] | string
+	}
+
+export const Flex = forwardRef<HTMLDivElement, FlexProps>(({
 	direction,
-	column,
 	justify,
 	align,
 	wrap,
@@ -26,37 +77,27 @@ export function Flex({
 	truncate,
 	className,
 	children,
+	style,
 	...props
-}: FlexProps) {
+}, ref) => {
 	return (
 		<Text
-			className={clsx(
-				styles.flex,
-				column && styles.column,
-				direction && styles[ direction ],
-				justify && styles[ `justify-${justify}` ],
-				align && styles[ `align-${align}` ],
-				gap && styles[ `gap-${gap}` ],
-				wrap && styles.wrap,
-				truncate && styles[ `truncate-breakpoint-${truncate}` ],
+			ref={ref}
+			className={flex({
+				direction,
+				justify,
+				align,
+				gap: typeof gap === "string" ? undefined : gap,
+				wrap,
+				truncate,
 				className
-			)}
+			})}
+			style={{ 
+				gap: typeof gap === "string" ? gap : undefined,
+				...style
+			}}
 			{...props}>
 			{children}
 		</Text>
 	)
-}
-
-Flex.Centered = CenteredFlex
-Flex.styles = styles
-
-function CenteredFlex({ children, ...props }: Omit<FlexProps, "justify" | "align">) {
-	return (
-		<Flex
-			{...props}
-			justify="center"
-			align="center">
-			{children}
-		</Flex>
-	)
-}
+})

@@ -2,9 +2,6 @@
 	display: flex;
 }
 
-.row {
-	flex-direction: row;
-}
 .row-reverse {
 	flex-direction: row-reverse;
 }
@@ -127,4 +124,9 @@
 }
 .gap-48 {
 	gap: 48px;
+}
+
+.centered {
+	justify-content: center;
+	align-items: center;
 }
