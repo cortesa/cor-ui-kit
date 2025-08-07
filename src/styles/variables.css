@@ -1,0 +1,41 @@
+/* src/styles/variables.css */
+:root {
+	/* Spacing variables */
+	--cor-border-radius: 8px;
+	--cor-border-width: 1px;
+	
+	/* Color variables */
+	--cor-color-primary: #0070f3;
+	--cor-color-secondary: #ff4081;
+	--cor-color-accent: #f4770a;
+	--cor-color-neutral: #e5e5e5;
+	--cor-color-text: #000000;
+	--cor-color-text-primary: #ffffff;
+
+	/* Button specific colors */
+	
+	/* Default */
+	--cor-color-button-default: var(--cor-color-neutral);
+	--cor-color-button-default-hover: oklch(from var(--cor-color-neutral) calc(l - 0.3) c h);
+	--cor-color-button-default-text: var(--cor-color-text);
+	--cor-color-button-default-text-hover: var(--cor-color-text-primary);
+	
+	/* Primary */
+	--cor-color-button-primary: var(--cor-color-primary);
+	--cor-color-button-primary-hover: oklch(from var(--cor-color-primary) calc(l - 0.3) c h);
+	--cor-color-button-primary-text: var(--cor-color-text-primary);
+	--cor-color-button-primary-text-hover: var(--cor-color-text-primary);
+	
+	/* Secondary */
+	--cor-color-button-secondary: var(--cor-color-secondary);
+	--cor-color-button-secondary-hover: oklch(from var(--cor-color-secondary) calc(l - 0.3) c h);
+	--cor-color-button-secondary-text: var(--cor-color-text-secondary);
+	--cor-color-button-secondary-text-hover: var(--cor-color-text-primary);
+	
+	/* Accent */
+	--cor-color-button-accent: var(--cor-color-accent);
+	--cor-color-button-accent-hover: oklch(from var(--cor-color-accent) calc(l - 0.3) c h);
+	--cor-color-button-accent-text: var(--cor-color-text-accent);
+	--cor-color-button-accent-text-hover: var(--cor-color-text-primary);
+
+}
