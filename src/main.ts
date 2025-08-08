@@ -1,4 +1,4 @@
-import './styles/variables.css'
+import '@/CSSVars/index.css'
 
 export { Button } from '@/components/Button';
 export { Text } from '@/components/Text';

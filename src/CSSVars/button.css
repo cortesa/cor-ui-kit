@@ -1,19 +1,11 @@
-/* src/styles/variables.css */
-:root {
-	/* Spacing variables */
-	--cor-border-radius: 8px;
-	--cor-border-width: 1px;
-	
-	/* Color variables */
-	--cor-color-primary: #0070f3;
-	--cor-color-secondary: #ff4081;
-	--cor-color-accent: #f4770a;
-	--cor-color-neutral: #e5e5e5;
-	--cor-color-text: #000000;
-	--cor-color-text-primary: #ffffff;
+/* Button Variables */
 
-	/* Button specific colors */
-	
+:root {	
+	/* Spacing variables */
+	--cor-button-border-radius: var(--cor-border-radius);
+	--cor-button-border-width: var(--cor-border-width);
+
+	/* Button colors */
 	/* Default */
 	--cor-color-button-default: var(--cor-color-neutral);
 	--cor-color-button-default-hover: oklch(from var(--cor-color-neutral) calc(l - 0.3) c h);
@@ -37,5 +29,4 @@
 	--cor-color-button-accent-hover: oklch(from var(--cor-color-accent) calc(l - 0.3) c h);
 	--cor-color-button-accent-text: var(--cor-color-text-accent);
 	--cor-color-button-accent-text-hover: var(--cor-color-text-primary);
-
 }

@@ -9,7 +9,7 @@
 	pointer-events: all;
 
 	padding: 12px 20px;
-	border-radius: var(--cor-border-radius);
+	border-radius: var(--cor-button-border-radius);
 }
 
 /* Variants */
@@ -18,7 +18,7 @@
 .button.default {
 	background: var(--cor-color-button-default);
 	color: var(--cor-color-button-default-text);
-	border: var(--cor-border-width) solid var(--cor-color-button-default);
+	border: var(--cor-button-border-width) solid var(--cor-color-button-default);
 }
 .button.default:hover {
 	background-color: var(--cor-color-button-default-hover);
@@ -30,7 +30,7 @@
 .button.primary {
 	background: var(--cor-color-button-primary);
 	color: var(--cor-color-button-primary-text);
-	border: var(--cor-border-width) solid var(--cor-color-button-primary);
+	border: var(--cor-button-border-width) solid var(--cor-color-button-primary);
 }
 .button.primary:hover {
 	background-color: var(--cor-color-button-primary-hover);
@@ -42,7 +42,7 @@
 .button.secondary {
 	background: var(--cor-color-button-secondary);
 	color: var(--cor-color-button-secondary-text);
-	border: var(--cor-border-width) solid var(--cor-color-button-secondary);
+	border: var(--cor-button-border-width) solid var(--cor-color-button-secondary);
 }
 .button.secondary:hover {
 	background-color: var(--cor-color-button-secondary-hover);
@@ -53,7 +53,7 @@
 .button.accent {
 	background: var(--cor-color-button-accent);
 	color: var(--cor-color-button-accent-text);
-	border: var(--cor-border-width) solid var(--cor-color-button-accent);
+	border: var(--cor-button-border-width) solid var(--cor-color-button-accent);
 }
 .button.accent:hover {
 	background-color: var(--cor-color-button-accent-hover);
@@ -64,11 +64,11 @@
 /* Bordered */
 .button.bordered {
 	background: transparent;
-	border: var(--cor-border-width) solid currentcolor;
+	border: var(--cor-button-border-width) solid currentcolor;
 }
 .button.bordered:hover {
 	border-color: currentcolor;
-	box-shadow: inset 0 0  0px var(--cor-border-width) currentColor;
+	box-shadow: inset 0 0  0px var(--cor-button-border-width) currentColor;
 }
 
 /* Text */
