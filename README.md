@@ -10,7 +10,9 @@ Make sure your custom overrides are loaded **after** the default variable import
 
 ```ts
 // main.ts
+
 import './your-custom-theme.css'
+```
 
 
 ### 🧾 Button Theme Variables
@@ -64,3 +66,25 @@ These are the CSS variables you can override to customize button styles:
 | `--cor-color-button-accent-hover`         | `oklch(from var(--cor-color-accent) l-0.3 c h)`     | Hover background for the `accent` button                           |
 | `--cor-color-button-accent-text`          | `--cor-color-text-accent`                           | Text color for the `accent` button                                 |
 | `--cor-color-button-accent-text-hover`    | `--cor-color-text-primary`                          | Hover text color for the `accent` button                           |
+
+## 🧾 Font Size Variables
+This font size scale is designed to provide a consistent and flexible typographic system across your project. The first group of variables, defined in `rem` units, establishes an absolute, global font size scale that remains consistent regardless of the context. The second group, defined in `em` units, offers a relative scale that adapts to the font size of the parent element, allowing for local adjustments and responsive design. By using this combination, you can maintain uniform typography throughout your application while still having the flexibility to fine-tune sizes in specific components. Use the absolute `rem` variables for global text sizing and the relative `em` variables when you need font sizes to scale dynamically within nested elements.
+
+
+| Variable                    | Value   | Description                              |
+|-----------------------------|---------|------------------------------------------|
+| `--cor-font-size-xxs`       | 1.0rem  | Extra-extra-small (10px)                 |
+| `--cor-font-size-xs`        | 1.2rem  | Extra-small (12px)                       |
+| `--cor-font-size-s`         | 1.4rem  | Small (14px)                             |
+| `--cor-font-size-ms`        | 1.6rem  | Medium-small (16px)                      |
+| `--cor-font-size-m`         | 1.8rem  | Medium / base (18px)                     |
+| `--cor-font-size-ml`        | 2.0rem  | Medium-large (20px)                      |
+| `--cor-font-size-l`         | 2.4rem  | Large (24px)                             |
+| `--cor-font-size-xl`        | 3.2rem  | Extra-large (32px)                       |
+| `--cor-font-size-xxl`       | 4.0rem  | Extra-extra-large (40px)                 |
+| **Relative scale (em)**     |         |                                          |
+| `--cor-font-size-smallest`  | 0.7em   | Significantly smaller than parent        |
+| `--cor-font-size-smaller`   | 0.85em  | Slightly smaller than parent             |
+| `--cor-font-size-current`   | 1em     | Current / inherit from parent            |
+| `--cor-font-size-larger`    | 1.25em  | Slightly larger than parent              |
+| `--cor-font-size-largest`   | 1.5em   | Significantly larger than parent         |

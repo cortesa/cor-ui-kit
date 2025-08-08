@@ -33,7 +33,11 @@ const meta = {
     },
     gap: {
       control: { type: 'select' },
-      options: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, "20px", "1rem"],
+      options: [
+        "xxs", "xs", "s", "ms", "m", "ml", "l", "xl", "xxl",
+        0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48,
+        "20px", "1rem"
+      ],
       description: 'Gap between flex items, can also use custom values like "20px" or "1rem"',
     },
     truncate: {
@@ -55,16 +59,8 @@ const meta = {
     }
   },
   args: {
-    fontSize: 'm',
-    textAlign: 'center',
-    fontWeight: 'normal',
-    whiteSpace: 'normal',
-    textOverflow: 'normal',
-    textTransform: null,
-    textDecoration: 'none',
-    fontStyle: 'normal',
-    inline: false,
-    color: '#000',
+    direction: 'row',
+    centered: false,
   },
 } satisfies Meta<typeof Flex>;
  
@@ -74,9 +70,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: [
-      <p>1</p>,
-      <p>2</p>,
-      <p>3</p>,
+      <Flex centered width='50px' height="50px" style={{background: "var(--cor-color-neutral)", borderRadius: "var(--cor-border-radius)"}}>1</Flex>,
+      <Flex centered width='50px' height="50px" style={{background: "var(--cor-color-neutral)", borderRadius: "var(--cor-border-radius)"}}>2</Flex>,
+      <Flex centered width='50px' height="50px" style={{background: "var(--cor-color-neutral)", borderRadius: "var(--cor-border-radius)"}}>3</Flex>,
     ],
   },
 };

@@ -22,12 +22,27 @@ const button = cva(styles.button, {
       true: styles.rounded,
       false: "",
     },
+    disabled: {
+      true: styles.disabled,
+      false: "",
+    },
+    size: {
+      xxs: styles.sizeXxs,
+      xs: styles.sizeXs,
+      s: styles.sizeS,
+      ms: styles.sizeMs,
+      m: styles.sizeM,
+      ml: styles.sizeMl,
+      l: styles.sizeL,
+      xl: styles.sizeXl,
+      xxl: styles.sizeXxl,
   },
   defaultVariants: {
+    size: "s",
     variant: "default",
     iconLayout: false,
   },
-})
+}})
 
 export type ButtonProps = JSX.IntrinsicElements[ "button" ]
   & FlexProps
@@ -39,9 +54,12 @@ export type ButtonProps = JSX.IntrinsicElements[ "button" ]
     disabled?: boolean
 	}
 export function Button({
-	variant = "default",
+	variant,
+  size,
 	icon,
+  disabled,
 	className,
+  onClick,
 	children,
   style,
 	...props
@@ -49,14 +67,18 @@ export function Button({
   return (
     <Flex
       centered
-      type="button"
+      role="button"
       className={button({
         variant,
+        size,
         iconLayout: !!icon,
 				rounded: !children,
+        disabled,
         className
       })}
       style={{ ...style }}
+      onClick={disabled ? undefined : onClick}
+      {...props}
 			{...props}>
         {icon?.position === "left" && <div>{icon.children}</div>}
 			{children}

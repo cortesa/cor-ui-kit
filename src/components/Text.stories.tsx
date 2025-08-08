@@ -30,8 +30,8 @@ const meta = {
     fontSize: {
       control: { type: 'select' },
       options: [
-        'tinier', 'smaller', 'bigger', 'larger',
-        'xxs', 'xs', 's', 'ms', 'm', 'ml', 'l', 'xl', 'xxl'
+        'xxs', 'xs', 's', 'ms', 'm', 'ml', 'l', 'xl', 'xxl',
+        'smallest', 'smaller', 'current', 'larger', 'largest'
       ],
     },
     textAlign: {
@@ -91,6 +91,10 @@ const meta = {
       control: { type: 'number' },
       description: 'Flex shrink property for the text',
     },
+    noSelect: {
+      control: { type: 'boolean' },
+      description: 'If true, text will not be selectable',
+    },
     className: {
       control: { type: 'text' },
       description: 'Additional class names for the text',
@@ -112,6 +116,7 @@ const meta = {
     fontStyle: 'normal',
     inline: false,
     color: '#000',
+    noSelect: false,
   },
 } satisfies Meta<typeof Text>;
  

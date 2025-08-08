@@ -9,31 +9,46 @@
 }
 
 .font-size-xxs {
-	font-size: var(--font-size-xxs);
+	font-size: var(--cor-font-size-xxs);
 }
 .font-size-xs {
-	font-size: var(--font-size-xs);
+	font-size: var(--cor-font-size-xs);
 }
 .font-size-s {
-	font-size: var(--font-size-s);
+	font-size: var(--cor-font-size-s);
 }
 .font-size-ms {
-	font-size: var(--font-size-ms);
+	font-size: var(--cor-font-size-ms);
 }
 .font-size-m {
-	font-size: var(--font-size-m);
+	font-size: var(--cor-font-size-m);
 }
 .font-size-ml {
-	font-size: var(--font-size-ml);
+	font-size: var(--cor-font-size-ml);
 }
 .font-size-l {
-	font-size: var(--font-size-l);
+	font-size: var(--cor-font-size-l);
 }
 .font-size-xl {
-	font-size: var(--font-size-xl);
+	font-size: var(--cor-font-size-xl);
 }
 .font-size-xxl {
-	font-size: var(--font-size-xxl);
+	font-size: var(--cor-font-size-xxl);
+}
+.font-size-smallest {
+	font-size: var(--cor-font-size-smallest);
+}
+.font-size-smaller {
+	font-size: var(--cor-font-size-smaller);
+}
+.font-size-current {
+	font-size: var(--cor-font-size-current);
+}
+.font-size-larger {
+	font-size: var(--cor-font-size-larger);
+}
+.font-size-largest {
+	font-size: var(--cor-font-size-largest);
 }
 
 .font-weight-100 {
@@ -128,6 +143,12 @@
 
 .inline {
 	display: inline;
+}
+
+.no-select {
+	user-select: none;         
+	-webkit-user-select: none; 
+	-moz-user-select: none;    
 }
 
 .truncate-breakpoint-s {

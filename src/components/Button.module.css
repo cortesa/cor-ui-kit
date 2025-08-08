@@ -5,7 +5,6 @@
 	overflow: hidden;
 
 	transition: all 0.3s ease-in-out;
-	cursor: pointer;
 	pointer-events: all;
 
 	padding: 12px 20px;
@@ -114,7 +113,51 @@
 	margin: -50% 0;
 }
 
-.button:disabled {
-	opacity: 0.7;
+.button.disabled {
 	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+/* Sizes */
+.button.sizeXxs {
+	font-size: var(--cor-font-size-xxs);
+	font-weight: 700;
+	padding: 4px 8px;
+}
+.button.sizeXs {
+	font-size: var(--cor-font-size-xs);
+	font-weight: 600;
+	padding: 6px 10px;
+}
+.button.sizeS {
+	font-size: var(--cor-font-size-s);
+	font-weight: 500;
+	padding: 8px 12px;
+}
+.button.sizeMs {
+	font-size: var(--cor-font-size-ms);
+	font-weight: 400;
+	padding: 9px 14px;
+}
+.button.sizeM {
+	font-size: var(--cor-font-size-m);
+	font-weight: 400;
+	padding: 10px 16px;
+}
+.button.sizeMl {
+	font-size: var(--cor-font-size-ml);
+	font-weight: 400;
+	padding: 11px 18px;
+}
+.button.sizeL {
+	font-size: var(--cor-font-size-l);
+	padding: 12px 20px;
+}
+.button.sizeXl {
+	font-size: var(--cor-font-size-xl);
+	padding: 14px 24px;
+}
+.button.sizeXxl {
+	font-size: var(--cor-font-size-xxl);
+	padding: 16px 28px;
 }

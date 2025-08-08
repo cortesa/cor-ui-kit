@@ -14,6 +14,10 @@ const meta = {
       options: ['default','primary','secondary','accent','bordered','text' ],
       control: { type: 'select' },
     },
+    size: {
+      options: ['xxs', 'xs', 's', 'ms', 'm', 'ml', 'l', 'xl', 'xxl'],
+      control: { type: 'select' },
+    },
     disabled: {
       control: { type: 'boolean' },
     },
@@ -21,6 +25,7 @@ const meta = {
   args: {
     disabled: false,
     variant: 'primary',
+    onClick: () => alert('Button clicked!'),
   },
 } satisfies Meta<typeof Button>;
  

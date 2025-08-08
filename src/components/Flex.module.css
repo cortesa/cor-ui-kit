@@ -89,6 +89,36 @@
 	}
 }
 
+.gap-xxs {
+	gap: var(--cor-font-size-xxs);
+}
+.gap-xs {
+	gap: var(--cor-font-size-xs);
+}
+.gap-s {
+	gap: var(--cor-font-size-s);
+}
+.gap-ms {
+	gap: var(--cor-font-size-ms);
+}
+.gap-m {
+	gap: var(--cor-font-size-m);
+}
+.gap-ml {
+	gap: var(--cor-font-size-ml);
+}
+.gap-l {
+	gap: var(--cor-font-size-l);
+}
+.gap-xl {
+	gap: var(--cor-font-size-xl);
+}
+.gap-xxl {
+	gap: var(--cor-font-size-xxl);
+}
+.gap-0 {
+	gap: 0px;
+}
 .gap-4 {
 	gap: 4px;
 }

@@ -28,6 +28,11 @@ const text = cva("", {
 			l: styles["font-size-l"],
 			xl: styles["font-size-xl"],
 			xxl: styles["font-size-xxl"],
+			smallest: styles["font-size-smallest"],
+			smaller: styles["font-size-smaller"],
+			current: styles["font-size-current"],
+			larger: styles["font-size-larger"],
+			largest: styles["font-size-largest"],
 		},
 		textAlign: {
 			left: styles["text-align-left"],
@@ -73,6 +78,10 @@ const text = cva("", {
 		},
 		inline: {
 			true: styles.inline
+		},
+		noSelect: {
+			true: styles["no-select"],
+			false: ""
 		}
 	}
 })
@@ -88,6 +97,7 @@ export type TextProps = JSX.IntrinsicElements["div"]
 		lineHeight?: string
 		flexGrow?: number
 		flexShrink?: number
+		isProtected?: boolean
 	}
 
 export const Text = forwardRef<HTMLDivElement, TextProps>(({
@@ -109,6 +119,7 @@ export const Text = forwardRef<HTMLDivElement, TextProps>(({
 	lineHeight,
 	flexGrow,
 	flexShrink,
+	noSelect,
 	children,
 	className,
 	style,
@@ -129,6 +140,7 @@ export const Text = forwardRef<HTMLDivElement, TextProps>(({
 				fontStyle,
 				truncate,
 				inline: inline ? true : undefined,
+				noSelect,
 				className
 			})}
 			style={{

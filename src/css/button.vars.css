@@ -5,7 +5,10 @@
 	--cor-button-border-radius: var(--cor-border-radius);
 	--cor-button-border-width: var(--cor-border-width);
 
-	/* Button colors */
+	/************/
+	/* Variants */
+	/************/
+
 	/* Default */
 	--cor-color-button-default: var(--cor-color-neutral);
 	--cor-color-button-default-hover: oklch(from var(--cor-color-neutral) calc(l - 0.3) c h);
