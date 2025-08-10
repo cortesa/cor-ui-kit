@@ -91,4 +91,4 @@ import { FiPlus } from "react-icons/fi"
 ---
 
 **Related:**  
-- [Flex Component](../Flex/Flex.md) — Used internally for layout
+- [Flex Component](./Flex.md) — Used internally for layout
