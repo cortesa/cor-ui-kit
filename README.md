@@ -1,6 +1,7 @@
 # COR-UI-KIT
 
-Version: 0.0.3
+![NPM Version](https://img.shields.io/npm/v/cor-ui-kit)
+
 
 ## 🎨 Theming
 
@@ -87,4 +88,16 @@ This font size scale is designed to provide a consistent and flexible typographi
 | `--cor-font-size-smaller`   | 0.85em  | Slightly smaller than parent             |
 | `--cor-font-size-current`   | 1em     | Current / inherit from parent            |
 | `--cor-font-size-larger`    | 1.25em  | Slightly larger than parent              |
-| `--cor-font-size-largest`   | 1.5em   | Significantly larger than parent         |
+
+## 📂 Components Documentation
+
+Each component's documentation is stored in a `.md` file alongside its implementation in `src/components/`.
+
+Current components:
+
+- [Button](./src/components/Button.md)  
+  Customizable, theme-aware button component with multiple variants and sizes.
+- [Flex](./src/components/Flex.md)  
+  Layout utility component that simplifies working with CSS flexbox.
+- [Text](./src/components/Text.md)  
+  Typographic component for consistent text styling, sizing, and behavior.
