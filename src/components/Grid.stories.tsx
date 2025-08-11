@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Flex } from '@/components/Flex'
+import { Grid } from '@/components/Grid'
+import { Flex } from './Flex'
 
 const meta = {
-  title: 'Components/Layout/Flex',
+  title: 'Components/Layout/Grid',
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
@@ -10,12 +11,15 @@ const meta = {
       show: true
     }
   },
-  component: Flex,
+  component: Grid,
   argTypes: {
-    direction: {
-      control: { type: 'select' },
-      options: ['row', 'column', 'row-reverse', 'column-reverse'],
-      description: 'Flex direction'
+    columns: {
+      control: { type: 'text' },
+      description: 'CSS grid template columns, e.g. "repeat(3, 1fr)"'
+    },
+    rows: {
+      control: { type: 'text' },
+      description: 'CSS grid template rows, e.g. "repeat(2, auto)"'
     },
     justify: {
       control: { type: 'select' },
@@ -26,10 +30,6 @@ const meta = {
       control: { type: 'select' },
       options: ['start', 'end', 'center', 'stretch'],
       description: 'Align items'
-    },
-    wrap: {
-      control: { type: 'boolean' },
-      description: 'Enable wrapping of flex items'
     },
     gap: {
       control: { type: 'select' },
@@ -59,10 +59,11 @@ const meta = {
     }
   },
   args: {
-    direction: 'row',
-    centered: false
+    columns: '1fr 1fr 1fr',
+    rows: 'repear(3, 1fr)',
+    centered: false,
   }
-} satisfies Meta<typeof Flex>
+} satisfies Meta<typeof Grid>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -70,9 +71,12 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     children: [
-      <Flex centered width='50px' height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>1</Flex>,
-      <Flex centered width='50px' height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>2</Flex>,
-      <Flex centered width='50px' height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>3</Flex>
+      <Flex centered height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>1</Flex>,
+      <Flex centered height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>2</Flex>,
+      <Flex centered height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>3</Flex>,
+      <Flex centered height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>4</Flex>,
+      <Flex centered height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>5</Flex>,
+      <Flex centered height='50px' style={{ background: 'var(--cor-color-neutral)', borderRadius: 'var(--cor-border-radius)' }}>6</Flex>
     ]
   }
 }

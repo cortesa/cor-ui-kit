@@ -1,7 +1,7 @@
 {
   "name": "cor-ui-kit",
   "private": false,
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "files": [
     "dist"
@@ -15,6 +15,9 @@
       "require": "./dist/cor-ui-kit.umd.umd.cjs"
     },
     "./dist/cor-ui-kit.css": "./dist/cor-ui-kit.css"
+  },
+  "ts-standard": {
+    "project": "./tsconfig.json"
   },
   "scripts": {
     "dev": "vite --host",
@@ -42,8 +45,10 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-storybook": "^9.1.1",
     "globals": "^16.3.0",
+    "standard": "^17.1.2",
     "storybook": "^9.1.1",
-    "typescript": "~5.8.3",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.4",
     "vite-plugin-css-injected-by-js": "^3.5.2",

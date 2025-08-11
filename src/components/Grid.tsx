@@ -1,18 +1,11 @@
-import { forwardRef, type HTMLAttributes, type ReactNode } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { Text, type TextProps } from './Text'
-import styles from './Flex.module.css'
+import styles from './Grid.module.css'
 
-const flex = cva(styles.flex, {
+const grid = cva(styles.grid, {
   variants: {
-    direction: {
-      row: styles.row,
-      'row-reverse': styles['row-reverse'],
-      column: styles.column,
-      'column-reverse': styles['column-reverse']
-    },
-    justify: {
+  	justify: {
       center: 'justify-center',
       stretch: 'justify-stretch',
       start: 'justify-start',
@@ -51,65 +44,62 @@ const flex = cva(styles.flex, {
       44: 'gap-44',
       48: 'gap-48'
     },
+		centered: {
+      true: "centered",
+      false: ''
+    },
     truncate: {
       s: styles.truncateS,
       m: styles.truncateM,
       l: styles.truncateL
     },
-		wrap: {
-      true: styles.wrap,
-      false: styles.nowrap
-    },
-    centered: {
-      true: "centered",
-      false: ''
-    }
-  },
-  defaultVariants: {
-    direction: 'row',
-    align: 'start'
+		defaultVariants: {
+  	  direction: 'row',
+  	  align: 'start'
+  	}
   }
 })
-export type FlexProps = HTMLAttributes<HTMLDivElement>
+
+export type GridProps = React.HTMLAttributes<HTMLDivElement>
 & TextProps
-& Omit<VariantProps<typeof flex>, 'gap'>
+& Omit<VariantProps<typeof grid>, 'gap'>
 & {
-  gap?: VariantProps<typeof flex>['gap'] | string
-  children?: ReactNode
+  columns?: string
+  rows?: string
+  gap?: VariantProps<typeof grid>['gap'] | string
 }
 
-export const Flex = forwardRef<HTMLDivElement, FlexProps>(({
-  direction,
+export function Grid ({
+  columns,
+  rows,
   justify,
   align,
-  centered,
-  wrap,
   gap,
   truncate,
+	centered,
   className,
   style,
   children,
   ...props
-}, ref) => {
+}: GridProps) {
   return (
     <Text
-      ref={ref}
-      className={flex({
-			  direction,
+      className={grid({
 			  justify,
 			  align,
-			  centered,
+				centered,
 			  gap: typeof gap === 'string' && ![
-			    'xxs', 'xs', 's', 'ms', 'm', 'ml', 'l', 'xl', 'xxl'
-			  ].includes(gap)
-			    ? undefined
-			    : gap as VariantProps<typeof flex>['gap'],
-			  wrap,
+							'xxs', 'xs', 's', 'ms', 'm', 'ml', 'l', 'xl', 'xxl'
+				].includes(gap)
+					? undefined
+					: gap as VariantProps<typeof grid>['gap'],
 			  truncate,
 			  className
-      })}
+			})}
       style={{
-			  gap: typeof gap === 'string' && [
+			  gridTemplateColumns: columns,
+			  gridTemplateRows: rows,
+				gap: typeof gap === 'string' && [
 			    'xxs', 'xs', 's', 'ms', 'm', 'ml', 'l', 'xl', 'xxl'
 			  ].includes(gap)
 			    ? undefined
@@ -123,4 +113,6 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(({
       {children}
     </Text>
   )
-})
+}
+
+Grid.styles = styles

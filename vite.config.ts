@@ -1,4 +1,4 @@
-import {dirname, resolve} from 'node:path'
+import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 
@@ -12,8 +12,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react(), 
-    dts({rollupTypes: true}),
+    react(),
+    dts({ rollupTypes: true }),
     cssInject(),
     tsconfigPaths()
   ],
@@ -21,7 +21,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/main.ts'),
       name: 'cor-ui-kit',
-      fileName: 'cor-ui-kit',
+      fileName: 'cor-ui-kit'
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
@@ -29,9 +29,9 @@ export default defineConfig({
         globals: {
           react: 'Rect',
           'react-dom': 'ReactDOM',
-          'react/jsx-runtime': 'jsxRuntime',
-        },
-      },
-    },
-  },
+          'react/jsx-runtime': 'jsxRuntime'
+        }
+      }
+    }
+  }
 })

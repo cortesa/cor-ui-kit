@@ -1,5 +1,6 @@
 @import './global.vars.css';
 @import './button.vars.css';
+@import './layout.css';
 
 * {
 	box-sizing: border-box;
