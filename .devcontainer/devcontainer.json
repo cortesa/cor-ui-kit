@@ -12,7 +12,8 @@
 			"extensions": [
 				"runem.lit-plugin",
 				"dbaeumer.vscode-eslint",
-				"waderyan.gitblame"
+				"waderyan.gitblame",
+				"standard.vscode-standard"
 			],
 			"settings": {
 				"workbench.editor.tabCloseButton": "left",
